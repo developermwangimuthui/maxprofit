@@ -7,7 +7,8 @@
     <link rel="icon" href="/img/{{$settings->site_logo}}" type="image/x-icon"/>
 
     <!-- Fonts and icons -->
-    <script src="/atlantis/js/plugin/webfont/webfont.min.js"></script>
+    <script src="mmammamma"></script>
+    <script src="{{ asset('/atlantis/js/plugin/webfont/webfont.min.js')}}"></script>
     <script>
         WebFont.load({
             google: {"families":["Lato:300,400,700,900"]},
@@ -47,7 +48,7 @@
         $('#suc').show().animate({ width: "30%" }, "1000").delay(10000).fadeOut(100);
     </script>
 @endif
-	
+
 
 <script src="/atlantis/js/core/popper.min.js"></script>
 <script src="/atlantis/js/core/bootstrap.min.js"></script>
@@ -91,7 +92,7 @@
 <script src="/atlantis/js/moment.js"></script>
 <script src="/atlantis/main.js"></script>
 
-<script type="text/javascript">    
+<script type="text/javascript">
     $(document).ready(function(){
         var timeout = 10000;
         var num = 10
@@ -99,7 +100,7 @@
             $('#csrf').val('{{ csrf_token() }}');
             // alert('here');
         }, timeout);
-    });                                                    
+    });
 </script>
 
 </body>

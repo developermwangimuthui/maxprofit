@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>MaxProfit - Complete Investment Package</title>
+	<title>Sirge | MFS - Complete Investment Package</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon"  href="/img/{{$settings->site_logo}}" type="image/x-icon"/>
 
@@ -95,7 +95,7 @@
 				</button>
 				 <a href="/admin/home" style="color: #FFF;">
                     <img src="/img/{{$settings->site_logo}}" alt="{{$settings->site_title}}" style="height: 30px; width: 30px; z-index: 1; border-radius:50%;" />
-                    MaxProfit
+                Sirge | MFS
                 </a>
 				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
 				<!-- <div class="nav-toggle">
@@ -108,50 +108,50 @@
 
 			<!-- Navbar Header -->
 			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
-				
+
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
 					</div>
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 						<li class="nav-item dropdown hidden-caret">
 							<a class="nav-link dropdown-toggle" href="{{ route('support.index')}}" role="button">
-								<?php                                  
+								<?php
 	                                $msgs = App\ticket::With('comments')->orderby('id', 'desc')->get();
 	                                $rd = 0;
-	                            ?>								
+	                            ?>
 								<i class="fab fa-teamspeak not_cont">
-									@foreach($msgs as $msg) 
-                                        @if($msg->state == 1)                        
-                                            @php($rd = 1)                                  
+									@foreach($msgs as $msg)
+                                        @if($msg->state == 1)
+                                            @php($rd = 1)
                                         @endif
                                         @foreach($msg->comments as $comment)
                                         	@if($comment->state == 1 && $comment->sender == 'user')
                                         		@php($rd = 1)
                                         	@endif
-                                        @endforeach                                   
+                                        @endforeach
                                     @endforeach
-                                    @if($rd == 1)   
+                                    @if($rd == 1)
                                     	<i class="fa fa-circle new_not"></i>
-                                    @endif									
-								</i> Support Center 
-							</a>							
+                                    @endif
+								</i> Support Center
+							</a>
 						</li>
-						
-						
+
+
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
 									@if($adm->img == "")
 										<img src="/img/any.png" alt="avatar" class="avatar-img rounded-circle" align="center" />
-									@else							
+									@else
 										<img src="/img/profile/{{ $adm->img }}" alt="avatar" class="avatar-img rounded-circle" align="center" />
-									@endif	
-								</div>								
+									@endif
+								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-adm animated fadeIn">
 								<div class="dropdown-adm-scroll scrollbar-outer">
-									
-									<li>																			
+
+									<li>
 										<a class="dropdown-item" href="/admin/manage/users">
 											<span class="fa fa-users"></span> &nbsp;Manage Users
 										</a>
@@ -167,7 +167,7 @@
 												<span class="fas fa-donate"></span>&nbsp; User Deposits
 											</a>
 											<a class="dropdown-item" href="/admin/manage/withdrawals">
-												<span class="fa fa-file"></span>&nbsp; User Withdrawal 
+												<span class="fa fa-file"></span>&nbsp; User Withdrawal
 											</a>
 										@endif
 
@@ -179,22 +179,22 @@
 										</a>
 										<a class="dropdown-item" href="/admin/change/pwd">
 											<span class="fa fa-key"></span>&nbsp; Change Password
-										</a>	
+										</a>
 										<a class="dropdown-item" href="{{route('support.index')}}">
 											<span class="fab fa-teamspeak"></span>&nbsp; Support Center
-										</a>	
+										</a>
 
 										@php($role = Session::get('adm'))
-                                        @if($role->role == 3)		
+                                        @if($role->role == 3)
                                         	<a class="dropdown-item" href="/admin/viewlogs">
 												<span class="fa fa-list"></span>&nbsp; View User Activities
 											</a>
 											<a class="dropdown-item" href="/admin/view/settings">
 												<span class="fa fa-gears"></span>&nbsp; Settings
 											</a>
-										@endif								
-										
-										
+										@endif
+
+
 										<a class="dropdown-item" href="/logout"><span class="fa fa-arrow-right"></span> &nbsp;Logout</a>
 
 									</li>
@@ -208,7 +208,7 @@
 		</div>
 
 		<!-- Sidebar -->
-		<div class="sidebar sidebar-style-2">			
+		<div class="sidebar sidebar-style-2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 					<div class="user-plus" style="background-color: #1572E8;">
@@ -216,15 +216,15 @@
 							<div class="" align="center">
 							@if($adm->img == "")
 								<img src="/img/any.png" alt="avatar" class="avatar-img rounded-circle" align="center" style="height: 50px; width: 50px; border-radius: 50%;" />
-							@else							
+							@else
 								<img src="/img/profile/{{ $adm->img }}" alt="avatar" class="avatar-img rounded-circle" align="center" />
 							@endif
 							</div>
-							<div class="info" align="center">							
+							<div class="info" align="center">
 									<span>
-										{{ ucfirst($adm->name) }}									
+										{{ ucfirst($adm->name) }}
 									</span>
-								<div class="clearfix"></div>							
+								<div class="clearfix"></div>
 							</div>
 						</a>
 					</div>
@@ -235,7 +235,7 @@
 								<p> Dashboard</p>
 							</a>
 						</li>
-						
+
 						@php($role = Session::get('adm'))
                         @if($role->role == 3)
                         	<li class="nav-item">
@@ -251,7 +251,7 @@
 												<span class="sub-item"> Users </span>
 											</a>
 										</li>
-										
+
 										<li class="">
 											<a href="/admin/manage/adminUsers">
 												<span class="sub-item"> Admin </span>
@@ -260,21 +260,21 @@
 									</ul>
 								</div>
 							</li>
-							
+
 							<li class="nav-item">
 						    	<a href="/admin/manage/investments">
 									<i class="fas fa-hand-holding-usd"></i>
 									<p> Manage Investments</p>
 								</a>
 							</li>
-							
+
 							<li class="nav-item">
 						    	<a href="/admin/manage/deposits">
 									<i class="fas fa-donate"></i>
 									<p> Users Deposits </p>
 								</a>
 							</li>
-							
+
 							<li class="nav-item">
 						    	<a href="/admin/manage/withdrawals">
 									<i class="fas fa-arrow-circle-down"></i>
@@ -282,36 +282,36 @@
 								</a>
 							</li>
 						@endif
-						
+
 						<li class="nav-item">
 					    	<a href="/admin/manage/packages">
 								<i class="fa fa-briefcase"></i>
 								<p> Packages </p>
 							</a>
 						</li>
-						
+
 						<li class="nav-item">
 					    	<a href="/admin/send/msg">
 								<i class="fa fa-bell"></i>
 								<p> Send Notification </p>
 							</a>
 						</li>
-						
+
 						<li class="nav-item">
 					    	<a href="/admin/change/pwd">
 								<i class="fa fa-key"></i>
 								<p> Change Password </p>
 							</a>
 						</li>
-						
+
 						<li class="nav-item">
 					    	<a href="{{route('support.index')}}">
 								<i class="fab fa-teamspeak"></i>
 								<p> Support Center </p>
 							</a>
-						</li>			
+						</li>
 
-												
+
                         @if($role->role == 3)
 							<li class="nav-item">
 								<a data-toggle="collapse" href="#base">
@@ -326,7 +326,7 @@
 												<span class="sub-item">View User Activities</span>
 											</a>
 										</li>
-										
+
 										<li class="">
 											<a href="/admin/view/settings">
 												<span class="sub-item">Settings</span>
@@ -347,17 +347,17 @@
 									</ul>
 								</div>
 							</li>
-						@endif	
+						@endif
 
-						
+
 						<li class="nav-item">
 							<a href="/logout">
 								<i class="fas fa-arrow-left"></i>
 								<p>Logout</p>
 								<!-- <span class="caret"></span> -->
-							</a>							
+							</a>
 						</li>
-						
+
 					</ul>
 				</div>
 			</div>
